@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ReWear NL – Rent outfits for special occasions</title>
+<meta name="description" content="ReWear NL is an online clothing rental boutique in the Netherlands. Rent stylish outfits for weddings, graduations and parties.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF8F0; --beige:#E8D5C4; --pink:#D8A6A6; --gold:#C6A15B;
+  --cocoa:#49352D; --white:#FFFFFF;
+  --line:rgba(198,161,91,.55);
+  --head:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;
+  --body:'DM Sans','Helvetica Neue',Arial,sans-serif;
+  --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--body);background:var(--cream);color:var(--cocoa);line-height:1.6;font-size:17px}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cocoa);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+section{padding:88px 0}
+h1,h2,h3{font-family:var(--head);line-height:1.08;letter-spacing:-.02em;color:var(--cocoa)}
+h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:800;max-width:16ch}
+h2::after{content:"";display:block;width:56px;height:2px;background:var(--gold);margin-top:18px}
+.lead{max-width:52ch;margin-top:16px;opacity:.82}
+.btn{display:inline-block;background:var(--cocoa);color:var(--cream);padding:15px 32px;border-radius:999px;font:700 1rem var(--body);text-decoration:none;border:2px solid var(--cocoa);cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.btn:hover{background:var(--pink);border-color:var(--pink);color:var(--cocoa);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--cocoa);border-color:var(--gold)}
+.btn.ghost:hover{background:var(--beige);border-color:var(--gold);color:var(--cocoa)}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(255,248,240,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:800 1.45rem var(--head);text-decoration:none;letter-spacing:-.03em;color:var(--cocoa)}
+.logo span{color:var(--pink)}
+nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+nav a{text-decoration:none;font-weight:500}
+nav a:not(.btn):hover{text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:6px;text-decoration-thickness:2px}
+nav .btn{padding:10px 22px;color:var(--cream)}
+nav .btn:hover{color:var(--cocoa)}
+.menu{display:none;background:none;border:0;font-size:1.7rem;cursor:pointer;color:var(--cocoa)}
+
+/* hero */
+.hero{padding:64px 0 96px;background:linear-gradient(180deg,var(--cream) 0%,var(--beige) 100%)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.tag{display:inline-block;background:var(--white);border:1px solid var(--gold);border-radius:999px;padding:6px 18px;font-size:.9rem;margin-bottom:22px}
+.hero h1{font-size:clamp(2.8rem,7vw,5.2rem);font-weight:800}
+.hero h1 span{display:block}
+.hero h1 span:nth-child(2){color:var(--pink)}
+.hero h1 span:nth-child(3){font-style:italic}
+.hero p{margin:22px 0 32px;max-width:46ch;font-size:1.1rem}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.arches{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:end}
+.arch{border-radius:999px 999px 18px 18px;padding:28px 10px 14px;text-align:center;font-size:.85rem;font-weight:500;border:1.5px solid var(--gold);outline:1px solid var(--line);outline-offset:5px;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.arch svg{width:100%;height:auto;display:block}
+.arch small{display:block;margin-top:8px}
+.arch:nth-child(1){background:var(--beige);height:330px;color:var(--cocoa);--d:var(--cream)}
+.arch:nth-child(2){background:var(--pink);height:390px;color:var(--cream);--d:var(--gold);animation-delay:.12s}
+.arch:nth-child(3){background:var(--white);height:350px;color:var(--pink);--d:var(--cream);animation-delay:.24s}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+
+/* occasions */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:44px}
+.occ{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 26px;transition:transform .25s,box-shadow .25s}
+.occ:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(73,53,45,.12)}
+.occ .pic{height:210px;border-radius:16px;display:flex;justify-content:center;align-items:flex-end;padding-top:16px;margin-bottom:20px;overflow:hidden;border:1px solid var(--line)}
+.occ .pic svg{height:100%;width:auto}
+.occ h3,.occ p{padding:0 6px}
+.occ h3{font-size:1.35rem;margin-bottom:6px}
+.occ p{font-size:.96rem;opacity:.82}
+.occ:nth-child(1) .pic{background:var(--beige);color:var(--pink);--d:var(--cream)}
+.occ:nth-child(2) .pic{background:var(--pink);color:var(--cocoa);--d:var(--gold)}
+.occ:nth-child(3) .pic{background:var(--beige);color:var(--cocoa);--d:var(--cream)}
+.occ:nth-child(4) .pic{background:var(--pink);color:var(--cream);--d:var(--gold)}
+
+/* how */
+.how{background:var(--cocoa);color:var(--cream)}
+.how h2{color:var(--cream)}
+.how .lead{color:var(--beige);opacity:1}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;counter-reset:s;list-style:none}
+.steps li{counter-increment:s;border-top:1px solid var(--gold);padding-top:22px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--pink);color:var(--cocoa);font:800 1.1rem var(--head);margin-bottom:16px;box-shadow:0 0 0 4px var(--cocoa),0 0 0 5px var(--gold)}
+.steps h3{font-size:1.3rem;margin-bottom:8px;color:var(--cream)}
+.steps p{color:var(--beige);font-size:.97rem}
+.how .cta{margin-top:48px}
+.how .btn{background:var(--pink);color:var(--cocoa);border-color:var(--pink)}
+.how .btn:hover{background:var(--cream);border-color:var(--cream)}
+
+/* why */
+.why-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:start}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.perk{background:var(--beige);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.perk:nth-child(2),.perk:nth-child(3){background:var(--pink)}
+.perk .ico{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--cream);border:1px solid var(--gold);margin-bottom:14px}
+.perk svg{width:26px;height:26px;stroke:var(--cocoa);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.perk h3{font-size:1.15rem;margin-bottom:6px}
+.perk p{font-size:.95rem}
+
+/* contact */
+.contact{background:var(--beige)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px}
+.info{margin-top:28px;list-style:none;display:grid;gap:16px}
+.info li{border-left:2px solid var(--gold);padding-left:14px}
+.info b{display:block;font-size:.9rem;font-weight:500;opacity:.75}
+.info a{font-weight:700;word-break:break-all}
+form{background:var(--white);border:1px solid var(--line);padding:32px;border-radius:var(--r);display:grid;gap:16px}
+label{font-weight:500;font-size:.95rem;display:grid;gap:6px}
+input,textarea,select{font:inherit;padding:13px 15px;border:1.5px solid var(--beige);border-radius:12px;background:var(--cream);color:var(--cocoa)}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--gold)}
+textarea{min-height:110px;resize:vertical}
+.note{font-size:.85rem;opacity:.75}
+
+footer{padding:30px 0;font-size:.9rem;text-align:center;background:var(--cocoa);color:var(--beige);border-top:2px solid var(--gold)}
+
+@media(max-width:960px){
+  .grid4,.steps{grid-template-columns:1fr 1fr}
+  .hero .wrap,.why-grid,.contact-grid{grid-template-columns:1fr}
+  .arches{max-width:520px}
+}
+@media(max-width:720px){
+  section{padding:64px 0}
+  .menu{display:block}
+  nav{position:absolute;top:68px;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--line);display:none;padding:18px 4%}
+  nav.open{display:block}
+  nav ul{flex-direction:column;align-items:flex-start;gap:16px}
+  .grid4,.steps,.perks{grid-template-columns:1fr}
+  .arch:nth-child(1){height:250px}.arch:nth-child(2){height:300px}.arch:nth-child(3){height:270px}
+  .arch{padding-top:18px;font-size:.78rem}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!-- Outfit illustrations (reused below). Replace with real photos any time. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="dress" viewBox="0 0 100 170">
+    <path fill="currentColor" d="M38 8h6l1 32h10l1-32h6l-1 44 18 104Q50 168 21 156l18-104z"/>
+    <path d="M39 56h22" style="stroke:var(--d,#fff);stroke-opacity:.8" stroke-width="3" fill="none"/>
+    <path d="M30 120Q50 132 70 120M26 142Q50 156 74 142" style="stroke:var(--d,#fff);stroke-opacity:.6" stroke-width="2" fill="none"/>
+  </symbol>
+  <symbol id="suit" viewBox="0 0 100 170">
+    <path fill="currentColor" d="M30 14l16-6 4 22 4-22 16 6 10 44v54H20V58z"/>
+    <path fill="currentColor" fill-opacity=".85" d="M26 112h48l-3 54H54l-4-34-4 34H29z"/>
+    <path d="M50 30l-8 30 8 20 8-20-8-30M50 80v32" style="stroke:var(--d,#fff);stroke-opacity:.8" stroke-width="2" fill="none"/>
+    <circle cx="50" cy="92" r="1.8" style="fill:var(--d,#fff)"/><circle cx="50" cy="104" r="1.8" style="fill:var(--d,#fff)"/>
+  </symbol>
+  <symbol id="gown" viewBox="0 0 100 170">
+    <path fill="currentColor" d="M50 2l30 12-30 12-30-12z"/>
+    <path fill="currentColor" fill-opacity=".85" d="M36 24h28v10H36z"/>
+    <path fill="currentColor" d="M36 34h28l26 46-8 12-10-12 4 76H24l4-76-10 12-8-12z"/>
+    <path d="M80 14v26" style="stroke:var(--d,#fff)" stroke-width="2"/>
+    <path d="M50 38v128" style="stroke:var(--d,#fff);stroke-opacity:.6" stroke-width="2"/>
+  </symbol>
+  <symbol id="party" viewBox="0 0 100 170">
+    <path fill="currentColor" d="M36 20h6l3 20h10l3-20h6l-2 30 14 66Q50 128 22 116l14-66z"/>
+    <g style="fill:var(--d,#fff)"><circle cx="38" cy="78" r="2.2"/><circle cx="56" cy="70" r="2.2"/><circle cx="66" cy="92" r="2.2"/><circle cx="46" cy="100" r="2.2"/><circle cx="30" cy="106" r="2.2"/><circle cx="58" cy="112" r="2.2"/><circle cx="50" cy="58" r="2.2"/></g>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a href="#top" class="logo">ReWear<span> NL</span></a>
+    <button class="menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#occasions">Occasions</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#why">Why ReWear NL</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn" href="#occasions">Explore Outfits</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="tag">Outfit rental across the Netherlands</span>
+        <h1><span>Wear More.</span><span>Spend Less.</span><span>Rewear.</span></h1>
+        <p>ReWear NL lets teenagers, students and young adults rent standout outfits for the moments that matter. Look great at the wedding, the graduation or the birthday party, without paying full price for something you’ll wear once.</p>
+        <div class="cta">
+          <a class="btn" href="#occasions">Explore Outfits</a>
+          <a class="btn ghost" href="#how">See how it works</a>
+        </div>
+      </div>
+      <div class="arches" aria-label="Example outfits">
+        <div class="arch"><svg viewBox="0 0 100 170" role="img" aria-label="Tailored suit"><use href="#suit"/></svg><small>Tailored suit</small></div>
+        <div class="arch"><svg viewBox="0 0 100 170" role="img" aria-label="Evening dress"><use href="#dress"/></svg><small>Evening dress</small></div>
+        <div class="arch"><svg viewBox="0 0 100 170" role="img" aria-label="Party dress"><use href="#party"/></svg><small>Party dress</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="occasions">
+    <div class="wrap">
+      <h2>Find the outfit for your occasion</h2>
+      <p class="lead">Pick the event, then browse looks chosen to fit it.</p>
+      <div class="grid4">
+        <article class="occ">
+          <div class="pic"><svg viewBox="0 0 100 170" role="img" aria-label="Wedding guest dress"><use href="#dress"/></svg></div>
+          <h3>Weddings</h3>
+          <p>Elegant dresses and sharp suits for guests, bridesmaids and groomsmen.</p>
+        </article>
+        <article class="occ">
+          <div class="pic"><svg viewBox="0 0 100 170" role="img" aria-label="Graduation gown"><use href="#gown"/></svg></div>
+          <h3>Graduations</h3>
+          <p>Look polished in the photos on the biggest day of your studies.</p>
+        </article>
+        <article class="occ">
+          <div class="pic"><svg viewBox="0 0 100 170" role="img" aria-label="Formal suit"><use href="#suit"/></svg></div>
+          <h3>Formal events</h3>
+          <p>Galas, school balls and dinners that call for something sharper.</p>
+        </article>
+        <article class="occ">
+          <div class="pic"><svg viewBox="0 0 100 170" role="img" aria-label="Party dress"><use href="#party"/></svg></div>
+          <h3>Birthday parties</h3>
+          <p>Fun, eye-catching pieces for a night out with friends.</p>
+        </article>
+      </div>
+      <div class="cta" style="margin-top:44px"><a class="btn" href="#contact">Explore Outfits</a></div>
+    </div>
+  </section>
+
+  <section id="how" class="how">
+    <div class="wrap">
+      <h2>Renting is four easy steps</h2>
+      <p class="lead">From first scroll to return, everything happens online.</p>
+      <ol class="steps">
+        <li><h3>Browse</h3><p>Filter by occasion, size and style to find outfits you love.</p></li>
+        <li><h3>Rent</h3><p>Choose your rental dates and check out securely in minutes.</p></li>
+        <li><h3>Receive</h3><p>Your outfit arrives at your door, ready to wear before your event.</p></li>
+        <li><h3>Return</h3><p>Pack it in the same bag and send it back. We handle the cleaning.</p></li>
+      </ol>
+      <div class="cta"><a class="btn" href="#occasions">Explore Outfits</a></div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap why-grid">
+      <div>
+        <h2>Why choose ReWear NL</h2>
+        <p class="lead">Special-occasion clothes are expensive and rarely worn twice. We make looking good affordable and kinder to the planet.</p>
+      </div>
+      <div class="perks">
+        <div class="perk">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3 3 0 0 0-5 1.5c0 3 5 1.5 5 4.5a3 3 0 0 1-5 1.5M12 6v2M12 16v2"/></svg></div>
+          <h3>Affordable</h3><p>Rent for a fraction of the retail price and keep your budget for the fun parts.</p>
+        </div>
+        <div class="perk">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20c0-9 5-14 16-16 0 11-5 16-13 16"/><path d="M4 20c3-5 6-8 10-10"/></svg></div>
+          <h3>Sustainable</h3><p>Sharing outfits means fewer clothes bought, worn once and left in a wardrobe.</p>
+        </div>
+        <div class="perk">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .8-4.4 4.2 1.1 6L12 16.6 6.7 19.6l1.1-6L3.4 9.4l6-.8z"/></svg></div>
+          <h3>Trendy styles</h3><p>Fresh, fashionable pieces picked for young people, not last decade’s catalogue.</p>
+        </div>
+        <div class="perk">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
+          <h3>Hassle-free</h3><p>Delivery, cleaning and returns are covered, so there’s nothing to wash or store.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>Get in touch</h2>
+        <p class="lead">Questions about sizes, dates or an upcoming event? Send us a message and we’ll reply within a day or two.</p>
+        <ul class="info">
+          <li><b>Email</b><a href="mailto:mdalarafat@teamacademy.nl">mdalarafat@teamacademy.nl</a></li>
+          <li><b>Location</b>The Netherlands, online delivery nationwide</li>
+        </ul>
+      </div>
+      <form id="form">
+        <label>Your name<input type="text" name="name" required autocomplete="name"></label>
+        <label>Your email<input type="email" name="email" required autocomplete="email"></label>
+        <label>Occasion
+          <select name="occasion">
+            <option>Wedding</option><option>Graduation</option><option>Birthday party</option><option>Formal event</option><option>Other</option>
+          </select>
+        </label>
+        <label>Message<textarea name="message" required></textarea></label>
+        <button class="btn" type="submit">Send message</button>
+        <p class="note" id="note" role="status">This opens your email app with your message ready to send.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> ReWear NL. Wear More. Spend Less. Rewear.</div>
+</footer>
+
+<script>
+  const EMAIL = 'mdalarafat@teamacademy.nl';
+
+  // Mobile menu
+  const menu = document.querySelector('.menu'), nav = document.getElementById('nav');
+  menu.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    menu.setAttribute('aria-expanded', open);
+    menu.textContent = open ? '✕' : '☰';
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open'); menu.setAttribute('aria-expanded', false); menu.textContent = '☰';
+  }));
+
+  // Contact form: opens the visitor's email app, addressed to EMAIL (no backend needed)
+  document.getElementById('form').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    const body = `Name: ${f.get('name')}\nEmail: ${f.get('email')}\nOccasion: ${f.get('occasion')}\n\n${f.get('message')}`;
+    window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('ReWear NL enquiry: ' + f.get('occasion')) + '&body=' + encodeURIComponent(body);
+    document.getElementById('note').textContent = 'Thanks! Your email app should now open with your message.';
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
+
+
+
+
+
+       
+         
+
+
+    
